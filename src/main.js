@@ -16,9 +16,11 @@ new Vue({
   el: '#informationCard',
   components: { InformationCard },
   template: '<InformationCard/>'
+
 })
 new Vue({
   el: '#widgetComponent',
   components: { WidgetComponent },
   template: '<WidgetComponent/>'
-})
+}
+)
