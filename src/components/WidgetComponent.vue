@@ -15,16 +15,16 @@
           </span>
         </div>
         <div class="temperature">
-          <h3 id="temperature">{{this.info.current.temperature}}<img id="degreeImg" src="../assets/temperature.png" alt="earth" style="width:45%"> </h3>
+          <h3 id="temperature">{{this.info.current.temp_c}}<img id="degreeImg" src="../assets/temperature.png" alt="earth" style="width:45%"> </h3>
         </div>
         <div class="humidity">
           <img id="humidityImg" src="../assets/raindrop.png" alt="earth" style="width:30%">
           <h3 id="humidity">{{this.info.current.humidity}}% </h3>
         </div>
         <div class="pressure">
-          <h3 id="pressure">{{this.info.current.pressure}} hPa </h3>
+          <h3 id="pressure">{{this.info.current.pressure_mb}} hPa </h3>
         </div>
-        <p id="observationTime">Observation time: {{this.info.current.observation_time}}</p>
+        <p id="observationTime">Updated: {{this.info.current.last_updated}}</p>
       </div>
       </div>
     </div>
@@ -42,9 +42,7 @@ export default {
     }
   },
   mounted () {
-    axios.get('http://api.weatherstack.com/current\n' +
-        '?access_key=eece8d8b6f7bb98e315a81b15942118f\n' +
-        '& query=Cracow')
+    axios.get('https://api.weatherapi.com/v1/current.json?key=77ec79a6026544048e3131424202105&q=Cracow')
       .then(response => (this.info = response.data))
       .catch(error => console.log(error))
   },
