@@ -131,4 +131,8 @@ export default {
   p{
     margin-top: -15px;
   }
+  #subscription-button{
+    font-size: 1vw;
+
+  }
 </style>
