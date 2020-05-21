@@ -6,7 +6,6 @@
         <div class="clock">
           <h2 id="clockTick">{{this.currentTime}}</h2>
           <p id="currentDate">{{this.currentDate}}</p>
-
         </div>
         <div class="location">
           <img id="locationImg" src="../assets/planet-earth.png" alt="earth" style="width:80%">
@@ -14,7 +13,6 @@
             <h3>{{this.info.location.name}}</h3>
             <h3>{{this.info.location.country}}</h3>
           </span>
-
         </div>
         <div class="temperature">
           <h3 id="temperature">{{this.info.current.temperature}}<img id="degreeImg" src="../assets/temperature.png" alt="earth" style="width:45%"> </h3>
@@ -34,7 +32,6 @@
 
 <script>
 import axios from 'axios'
-
 export default {
   name: 'WidgetComponent',
   data () {
@@ -45,8 +42,7 @@ export default {
     }
   },
   mounted () {
-    axios
-      .get('http://api.weatherstack.com/current\n' +
+    axios.get('http://api.weatherstack.com/current\n' +
         '?access_key=eece8d8b6f7bb98e315a81b15942118f\n' +
         '& query=Cracow')
       .then(response => (this.info = response.data))
