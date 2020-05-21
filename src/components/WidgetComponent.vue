@@ -15,7 +15,7 @@
           </span>
         </div>
         <div class="temperature">
-          <h3 id="temperature">{{this.info.current.temp_c}}<img id="degreeImg" src="../assets/temperature.png" alt="earth" style="width:45%"> </h3>
+          <h3 id="temperature">{{this.info.current.temp_c}}<img id="degreeImg" src="../assets/temperature.png" alt="earth" style="width:40%"> </h3>
         </div>
         <div class="humidity">
           <img id="humidityImg" src="../assets/raindrop.png" alt="earth" style="width:30%">
@@ -24,7 +24,7 @@
         <div class="pressure">
           <h3 id="pressure">{{this.info.current.pressure_mb}} hPa </h3>
         </div>
-        <p id="observationTime">Updated: {{this.info.current.last_updated}}</p>
+        <p id="observationTime">Updated:<br>{{this.info.current.last_updated}}</p>
       </div>
       </div>
     </div>
@@ -84,7 +84,7 @@ export default {
     height: 100px;
   }
   #clockTick{
-    font-size: 6vw;
+    font-size: 5vw;
     margin: 1vw 2vw 0 auto;
     float: right;
   }
@@ -92,7 +92,7 @@ export default {
     margin-top: 10px;
   }
   #temperature{
-    font-size: 8vw;
+    font-size: 8.5vw;
     color: #ffffff;
   }
   #humidity{
@@ -101,7 +101,7 @@ export default {
   .temperature{
     float: right;
     width: 16vw;
-    bottom: 4vw;
+    bottom: 6vw;
     position: relative;
     right: 3vw;
   }
@@ -110,13 +110,13 @@ export default {
     width: 10vw;
     top:7vw;
     position: relative;
-    left: 5vw;
+    left: 2vw;
   }
   .location{
     width: 9vw;
     margin-left: 3vw;
     position: relative;
-    top: 4.5vw;
+    top: 5vw;
     color: #ffffff;
   }
   .pressure{
@@ -124,7 +124,7 @@ export default {
     position: relative;
     top: 2vw;
     color: #ffffff;
-    left: 20vw;
+    left: 15vw;
     font-size: 1.5vw;
   }
   #locationInfo{
