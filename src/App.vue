@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <h1>Vue Components</h1>
+    <information-card></information-card>
     <widget-component></widget-component>
   </div>
 </template>
