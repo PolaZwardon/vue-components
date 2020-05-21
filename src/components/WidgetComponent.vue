@@ -94,7 +94,7 @@ export default {
     margin-top: 10px;
   }
   #temperature{
-    font-size: 10vw;
+    font-size: 9vw;
     color: #ffffff;
   }
   #humidity{
