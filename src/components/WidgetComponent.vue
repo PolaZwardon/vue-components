@@ -24,7 +24,7 @@
         <div class="pressure">
           <h3 id="pressure">{{this.info.current.pressure_mb}} hPa </h3>
         </div>
-        <p id="observationTime">Updated:<br>{{this.info.current.last_updated}}</p>
+        <p id="observationTime">Updated: {{this.info.current.last_updated}}</p>
       </div>
       </div>
     </div>
@@ -53,7 +53,9 @@ export default {
     getNow: function () {
       const today = new Date()
       const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()
-      const time = today.getHours() + ' : ' + today.getMinutes()
+      let minutes = today.getMinutes()
+      minutes = minutes < 10 ? '0' + minutes : minutes
+      const time = today.getHours() + ' : ' + minutes
       this.currentDate = date
       this.currentTime = time
     }
@@ -85,14 +87,14 @@ export default {
   }
   #clockTick{
     font-size: 5vw;
-    margin: 1vw 2vw 0 auto;
+    margin: 0.4vw 4vw 0 auto;
     float: right;
   }
   #locationImg{
     margin-top: 10px;
   }
   #temperature{
-    font-size: 8.5vw;
+    font-size: 10vw;
     color: #ffffff;
   }
   #humidity{
@@ -101,7 +103,7 @@ export default {
   .temperature{
     float: right;
     width: 16vw;
-    bottom: 6vw;
+    bottom: 7vw;
     position: relative;
     right: 3vw;
   }
@@ -124,8 +126,8 @@ export default {
     position: relative;
     top: 2vw;
     color: #ffffff;
-    left: 15vw;
-    font-size: 1.5vw;
+    left: 19vw;
+    font-size: 1.7vw;
   }
   #locationInfo{
     font-size: 2vw;
@@ -138,10 +140,11 @@ export default {
     position: relative;
     font-size: 2.5vw;
     color: #ffffff;
+    right: 0.3vw
   }
   #observationTime{
     float: right;
-    width: 8vw;
+    width: 16vw;
     margin-left: 40vw;
     font-size: 1vw;
     position: relative;
