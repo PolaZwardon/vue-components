@@ -26,8 +26,8 @@
         </div>
         <p id="observationTime">Updated: {{this.info.current.last_updated}}</p>
       </div>
-      </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -54,8 +54,11 @@ export default {
       const today = new Date()
       const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()
       let minutes = today.getMinutes()
+      let hours = today.getHours()
       minutes = minutes < 10 ? '0' + minutes : minutes
-      const time = today.getHours() + ' : ' + minutes
+      hours = hours < 10 ? '0' + hours : hours
+
+      const time = hours + ' : ' + minutes
       this.currentDate = date
       this.currentTime = time
     }
@@ -84,17 +87,19 @@ export default {
   .clock{
     margin-bottom: -100px;
     height: 100px;
+    position: relative;
+    right: 1vw;
   }
   #clockTick{
     font-size: 5vw;
-    margin: 0.4vw 4vw 0 auto;
+    margin: 0.4vw 1vw 0 auto;
     float: right;
   }
   #locationImg{
     margin-top: 10px;
   }
   #temperature{
-    font-size: 9vw;
+    font-size: 8vw;
     color: #ffffff;
   }
   #humidity{
@@ -103,14 +108,14 @@ export default {
   .temperature{
     float: right;
     width: 16vw;
-    bottom: 7vw;
+    bottom: 6vw;
     position: relative;
     right: 3vw;
   }
   .humidity{
     float: left;
-    width: 10vw;
-    top:7vw;
+    width: 11vw;
+    top:8vw;
     position: relative;
     left: 2vw;
   }
@@ -118,13 +123,13 @@ export default {
     width: 9vw;
     margin-left: 3vw;
     position: relative;
-    top: 5vw;
+    top: 6vw;
     color: #ffffff;
   }
   .pressure{
     width: 9vw;
     position: relative;
-    top: 2vw;
+    top: 1vw;
     color: #ffffff;
     left: 19vw;
     font-size: 1.7vw;
@@ -136,7 +141,7 @@ export default {
     float: right;
   }
   #currentDate{
-    top: 1vw;
+    top: 1.5vw;
     position: relative;
     font-size: 2.5vw;
     color: #ffffff;
@@ -148,7 +153,7 @@ export default {
     margin-left: 40vw;
     font-size: 1vw;
     position: relative;
-    bottom:2vw;
+    bottom:1vw;
     right: 2vw;
   }
   h3{
