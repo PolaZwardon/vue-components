@@ -15,7 +15,7 @@
           </span>
         </div>
         <div class="temperature">
-          <h3 id="temperature">{{this.info.current.temp_c}}<img id="degreeImg" src="../assets/temperature.png" alt="earth" style="width:40%"> </h3>
+          <h3 id="temperature">{{this.info.current.temp_c}}<img id="degreeImg" src="../assets/temperature.png" alt="earth" style="width:30%"> </h3>
         </div>
         <div class="humidity">
           <img id="humidityImg" src="../assets/raindrop.png" alt="earth" style="width:30%">
@@ -42,7 +42,7 @@ export default {
     }
   },
   mounted () {
-    axios.get('https://api.weatherapi.com/v1/current.json?key=77ec79a6026544048e3131424202105&q=Cracow')
+    axios.get('https://api.weatherapi.com/v1/current.json?key=77ec79a6026544048e3131424202105&q=Warsaw')
       .then(response => (this.info = response.data))
       .catch(error => console.log(error))
   },
@@ -88,7 +88,7 @@ export default {
     margin-bottom: -100px;
     height: 100px;
     position: relative;
-    right: 1vw;
+    right: 2vw;
   }
   #clockTick{
     font-size: 5vw;
@@ -99,7 +99,7 @@ export default {
     margin-top: 10px;
   }
   #temperature{
-    font-size: 8vw;
+    font-size: 5vw;
     color: #ffffff;
   }
   #humidity{
@@ -107,10 +107,10 @@ export default {
   }
   .temperature{
     float: right;
-    width: 16vw;
-    bottom: 6vw;
+    width: 15vw;
+    bottom: 5vw;
     position: relative;
-    right: 3vw;
+    right: 4vw;
   }
   .humidity{
     float: left;
@@ -153,7 +153,7 @@ export default {
     margin-left: 40vw;
     font-size: 1vw;
     position: relative;
-    bottom:1vw;
+    top:2.5vw;
     right: 2vw;
   }
   h3{
