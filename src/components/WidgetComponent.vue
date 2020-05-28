@@ -57,7 +57,6 @@ export default {
       let hours = today.getHours()
       minutes = minutes < 10 ? '0' + minutes : minutes
       hours = hours < 10 ? '0' + hours : hours
-
       const time = hours + ' : ' + minutes
       this.currentDate = date
       this.currentTime = time

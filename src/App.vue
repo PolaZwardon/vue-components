@@ -8,12 +8,14 @@
 </template>
 
 <script>
+
 import InformationCard from './components/InformationCard'
 import WidgetComponent from './components/WidgetComponent'
 export default {
   name: 'App',
   components: {WidgetComponent, InformationCard}
 }
+
 </script>
 
 <style>
