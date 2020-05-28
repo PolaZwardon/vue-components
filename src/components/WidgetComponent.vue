@@ -1,33 +1,4 @@
 <template>
-<!--  <div>
-    <h2>Weather Widget</h2>
-    <div id="widgetComponent">
-      <div class="widget-container">
-        <div class="clock">
-          <h2 id="clockTick">{{this.currentTime}}</h2>
-          <p id="currentDate">{{this.currentDate}}</p>
-        </div>
-        <div class="location">
-          <img id="locationImg" src="../assets/planet-earth.png" alt="earth" style="width:80%">
-          <span id="locationInfo">
-            <h3>{{this.info.location.name}}</h3>
-            <h3>{{this.info.location.country}}</h3>
-          </span>
-        </div>
-        <div class="temperature">
-          <h3 id="temperature">{{this.info.current.temp_c}}<img id="degreeImg" src="../assets/temperature.png" alt="earth" style="width:30%"> </h3>
-        </div>
-        <div class="humidity">
-          <img id="humidityImg" src="../assets/raindrop.png" alt="earth" style="width:30%">
-          <h3 id="humidity">{{this.info.current.humidity}}% </h3>
-        </div>
-        <div class="pressure">
-          <h3 id="pressure">{{this.info.current.pressure_mb}} hPa </h3>
-        </div>
-        <p id="observationTime">Updated: {{this.info.current.last_updated}}</p>
-      </div>
-    </div>
-  </div>-->
   <div>
     <h2>Weather Widget</h2>
     <div
