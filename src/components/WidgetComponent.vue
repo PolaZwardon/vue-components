@@ -1,5 +1,5 @@
 <template>
-  <div>
+<!--  <div>
     <h2>Weather Widget</h2>
     <div id="widgetComponent">
       <div class="widget-container">
@@ -27,7 +27,59 @@
         <p id="observationTime">Updated: {{this.info.current.last_updated}}</p>
       </div>
     </div>
-  </div>
+  </div>-->
+  <div>
+    <h2>Weather Widget</h2>
+    <div
+         style="max-width: 30rem;"
+         class="mb-2"
+         id="widget-container">
+    <div class="row">
+          <div class="col">
+            <div class="date">
+            <p id="currentDate">{{this.currentDate}}</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="clock">
+            <h2 id="clock-widget">{{this.currentTime}}</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="location">
+              <img id="locationImg" src="../assets/planet-earth.png" alt="earth" style="width:50%">
+              <span id="locationInfo">
+            <h3>{{this.info.location.name}}</h3>
+            <h3>{{this.info.location.country}}</h3>
+          </span>
+            </div>          </div>
+          <div class="col">
+            <div class="temperature">
+              <h3 id="temperature">{{this.info.current.temp_c}}<img id="degreeImg" src="../assets/temperature.png" alt="earth" style="width:30%"> </h3>
+            </div>
+          </div>
+        </div>
+      <div class="row">
+      <div class="col">
+        <div class="humidity">
+          <img id="humidityImg" src="../assets/raindrop.png" alt="earth" style="width:20%" >
+          <h3 id="humidity">{{this.info.current.humidity}}% </h3>
+        </div>
+      </div>
+      <div class="col">
+        <div class="pressure">
+          <h3 id="pressure">{{this.info.current.pressure_mb}} hPa </h3>
+        </div>
+      </div>
+      </div>
+    <div class="row">
+      <div class="col">
+      <p id="observationTime">Updated: {{this.info.current.last_updated}}</p>
+    </div>      </div>
+    </div>
+    </div>
 </template>
 
 <script>
@@ -57,7 +109,7 @@ export default {
       let hours = today.getHours()
       minutes = minutes < 10 ? '0' + minutes : minutes
       hours = hours < 10 ? '0' + hours : hours
-      const time = hours + ' : ' + minutes
+      const time = hours + ':' + minutes
       this.currentDate = date
       this.currentTime = time
     }
@@ -66,96 +118,60 @@ export default {
 </script>
 
 <style scoped>
-  .widget-container {
+  #widget-container{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 3%;
     background-image: linear-gradient(to bottom right, rgba(130,221,179,0.34), rgba(35,111,145,0.65));
-    width: 35%;
-    height: 27vw;
-    margin: 0 auto;
+    float: none;
+    margin: 0 auto 10px;
     font-family: 'Montserrat', sans-serif;
-    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #ffffff;
-
   }
-  .widget-container:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+  .date{
+    margin-top: 1rem;
+    font-size: 2rem;
   }
-  .clock{
-    margin-bottom: -100px;
-    height: 100px;
-    position: relative;
-    right: 2vw;
+  #clock-widget{
+    font-size: 4rem;
+    margin-right: 1rem;
+    margin-top: 0.7rem;
   }
-  #clockTick{
-    font-size: 5vw;
-    margin: 0.4vw 1vw 0 auto;
-    float: right;
+  .temperature #temperature{
+    font-size: 7rem;
+    margin-right: 2rem;
+    margin-top: 2rem;
   }
-  #locationImg{
-    margin-top: 10px;
-  }
-  #temperature{
-    font-size: 5vw;
-    color: #ffffff;
+  #humidityImg{
+    float: left;
+    margin-left: 3rem;
+    margin-top: 1rem;
   }
   #humidity{
-    font-size: 3vw;
-  }
-  .temperature{
-    float: right;
-    width: 15vw;
-    bottom: 5vw;
-    position: relative;
-    right: 4vw;
-  }
-  .humidity{
     float: left;
-    width: 11vw;
-    top:8vw;
-    position: relative;
-    left: 2vw;
-  }
-  .location{
-    width: 9vw;
-    margin-left: 3vw;
-    position: relative;
-    top: 6vw;
-    color: #ffffff;
+    margin-top: 1.6rem;
   }
   .pressure{
-    width: 9vw;
-    position: relative;
-    top: 1vw;
-    color: #ffffff;
-    left: 19vw;
-    font-size: 1.7vw;
+    margin-right: 1rem;
   }
-  #locationInfo{
-    font-size: 2vw;
-  }
-  #humidity{
-    float: right;
-  }
-  #currentDate{
-    top: 1.5vw;
-    position: relative;
-    font-size: 2.5vw;
-    color: #ffffff;
-    right: 0.3vw
-  }
-  #observationTime{
-    float: right;
-    width: 16vw;
-    margin-left: 40vw;
-    font-size: 1vw;
-    position: relative;
-    top:2.5vw;
-    right: 2vw;
-  }
-  h3{
-    margin: 0 auto;
+  @media only screen and (max-width: 428px) {
+    .temperature #temperature{
+      font-size: 20vw;
+    }
+    #clock-widget{
+      font-size: 16vw;
+    }
+    .date{
+      font-size: 6vw;
+    }
+    #humidity{
+      font-size: 6vw;
+    }
+    #humidityImg{
+      float: left;
+      margin-left: 2rem;
+      margin-top: 1rem;
+    }
   }
 </style>
